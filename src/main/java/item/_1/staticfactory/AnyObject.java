@@ -1,4 +1,4 @@
-package chapter.two.item.one;
+package item._1.staticfactory;
 
 public class AnyObject {
 

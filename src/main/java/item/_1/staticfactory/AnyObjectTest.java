@@ -1,4 +1,4 @@
-package chapter.two.item.one;
+package item._1.staticfactory;
 
 import org.junit.jupiter.api.Test;
 
