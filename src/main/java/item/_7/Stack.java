@@ -6,7 +6,7 @@ import java.util.EmptyStackException;
 public class Stack {
 
     private Object[] elements;
-    private int position = 0;
+    private int size = 0;
     private static final int DEFAULT_INITIAL_CAPACITY = 16;
 
     public Stack() {
@@ -15,24 +15,24 @@ public class Stack {
 
     public void push(Object e) {
         ensureCapacity();
-        elements[position++] = e;
+        elements[size++] = e;
     }
 
     public Object pop() {
-        if (position == 0) {
+        if (size == 0) {
             throw new EmptyStackException();
         }
 
-        Object result = elements[--position];
+        Object result = elements[--size];
 
-        elements[position] = null; // this will avoid memory leak. Then the garbage collector will take care of this obsolete reference.
+        elements[size] = null; // this will avoid memory leak. Then the garbage collector will take care of this obsolete reference.
 
         return result;
     }
 
     private void ensureCapacity() {
-        if (elements.length == position) {
-            elements = Arrays.copyOf(elements, 2 * position + 1);
+        if (elements.length == size) {
+            elements = Arrays.copyOf(elements, 2 * size + 1);
         }
     }
 
