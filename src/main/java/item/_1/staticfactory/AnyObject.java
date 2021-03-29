@@ -36,7 +36,6 @@ public class AnyObject {
         return INSTANCE;
     }
 
-
     public String getParam1() {
         return param1;
     }
